@@ -9,9 +9,9 @@ namespace DFC.HtmlToDataTranslator.ValueConverters
     {
         private readonly IHtmlToDataTranslator htmlToDataTranslator;
 
-        public HtmlToStringValueConverter()
+        public HtmlToStringValueConverter(IHtmlToDataTranslator htmlToDataTranslator)
         {
-            this.htmlToDataTranslator = new HtmlAgilityPackDataTranslator();
+            this.htmlToDataTranslator = htmlToDataTranslator;
         }
 
         public List<string> Convert(string sourceMember, ResolutionContext context)
