@@ -64,6 +64,11 @@ namespace DFC.HtmlToDataTranslator.Services
                 }
             }
 
+            if (!elementNodes.Any())
+            {
+                result.Add(value);
+            }
+
             return result;
         }
 
