@@ -25,14 +25,6 @@ jobs:
     - visualstudio
   
   steps:
-  # Copy app settings template file, otherwise the build will fail
-  - task: PowerShell@2
-    displayName: 'Rename app settings template'    
-    inputs:
-      targetType: inline
-      script:
-        Copy-Item -Path "$(System.DefaultWorkingDirectory)\$(SolutionBaseName).IntegrationTests\appsettings-template.json" -Destination "$(System.DefaultWorkingDirectory)\$(SolutionBaseName).IntegrationTests\appsettings.json"
-
   - task: DotNetCoreCLI@2  
     inputs:
       command: custom
