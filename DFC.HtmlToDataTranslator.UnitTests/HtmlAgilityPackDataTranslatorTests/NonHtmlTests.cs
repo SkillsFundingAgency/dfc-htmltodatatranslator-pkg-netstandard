@@ -15,5 +15,14 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             Assert.Single(outputValue);
             Assert.Equal(sourceValue, outputValue.First());
         }
+
+        [Fact]
+        public void BlankStringReturnsEmptyList()
+        {
+            var translator = new HtmlAgilityPackDataTranslator();
+            var sourceValue = string.Empty;
+            var outputValue = translator.Translate(sourceValue);
+            Assert.Empty(outputValue);
+        }
     }
 }
