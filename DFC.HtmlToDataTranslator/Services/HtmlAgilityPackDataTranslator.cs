@@ -64,7 +64,7 @@ namespace DFC.HtmlToDataTranslator.Services
                 }
             }
 
-            if (!elementNodes.Any())
+            if (!elementNodes.Any() && !string.IsNullOrWhiteSpace(value))
             {
                 result.Add(value);
             }
