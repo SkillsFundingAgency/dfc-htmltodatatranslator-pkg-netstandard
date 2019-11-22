@@ -22,7 +22,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
 </ul>";
             var outputValue = translator.Translate(sourceValue);
             Assert.Single(outputValue);
-            Assert.Equal("Your duties may include: preparing for an event by researching clubs or players; working with a production team; taking direction from a producer; interviewing sports professionals; commentating on events before, during and after the fixture; working with experts who give their opinion or statistics; updating your website, blog or social media feed", outputValue.First());
+            Assert.Equal("Your duties may include:preparing for an event by researching clubs or players; working with a production team; taking direction from a producer; interviewing sports professionals; commentating on events before, during and after the fixture; working with experts who give their opinion or statistics; updating your website, blog or social media feed", outputValue.First());
         }
     }
 }

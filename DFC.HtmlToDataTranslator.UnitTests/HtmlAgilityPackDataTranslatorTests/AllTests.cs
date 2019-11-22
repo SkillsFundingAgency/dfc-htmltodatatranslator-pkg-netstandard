@@ -31,10 +31,10 @@ The <a href = ""https://www.sportsjournalists.co.uk/training/work-experience/"" 
 for work experience.</p>";
             var outputValue = translator.Translate(sourceValue);
             Assert.Equal(5, outputValue.Count);
-            Assert.Equal("You'll need to have some practical experience and be able to show you have a real enthusiasm for sports commentating. ", outputValue.ElementAt(0));
-            Assert.Equal("To get some work experience you could: volunteer to commentate on charity events like fun runs; commentate for amateur matches at schools, college or for local teams; record commentary for websites or internet radio stations; volunteer for community, hospital or student radio, or TV", outputValue.ElementAt(1));
-            Assert.Equal("You can get a list of radio stations from: [Community Media Association | http://www.commedia.org.uk/]; [Hospital Broadcasting Association | http://www.hbauk.com/]; [RadioCentre | http://www.radiocentre.org/]", outputValue.ElementAt(2));
-            Assert.Equal("Large broadcasters like&nbsp;[BBC Careers | https://www.bbc.co.uk/careers/work-experience/], [ITV | http://www.itvjobs.com/workinghere/entry-careers/] &nbsp; and [Channel 4 | https://careers.channel4.com/4talent] offer work experience placements, insight and talent days.", outputValue.ElementAt(3));
+            Assert.Equal("You'll need to have some practical experience and be able to show you have a real enthusiasm for sports commentating.", outputValue.ElementAt(0));
+            Assert.Equal("To get some work experience you could:volunteer to commentate on charity events like fun runs; commentate for amateur matches at schools, college or for local teams; record commentary for websites or internet radio stations; volunteer for community, hospital or student radio, or TV", outputValue.ElementAt(1));
+            Assert.Equal("You can get a list of radio stations from:[Community Media Association | http://www.commedia.org.uk/]; [Hospital Broadcasting Association | http://www.hbauk.com/]; [RadioCentre | http://www.radiocentre.org/]", outputValue.ElementAt(2));
+            Assert.Equal("Large broadcasters like[BBC Careers | https://www.bbc.co.uk/careers/work-experience/],[ITV | http://www.itvjobs.com/workinghere/entry-careers/]and[Channel 4 | https://careers.channel4.com/4talent]offer work experience placements, insight and talent days.", outputValue.ElementAt(3));
         }
     }
 }
