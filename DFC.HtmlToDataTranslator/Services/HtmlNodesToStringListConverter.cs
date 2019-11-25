@@ -1,5 +1,5 @@
-﻿using HtmlAgilityPack;
-using System;
+﻿using DFC.HtmlToDataTranslator.Constants;
+using HtmlAgilityPack;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,14 +7,6 @@ namespace DFC.HtmlToDataTranslator.Services
 {
     public class HtmlNodesToStringListConverter
     {
-        private const string Href = "href";
-
-        private const string ElementA = "a";
-        private const string ElementP = "p";
-        private const string ElementUL = "ul";
-        private const string ElementOL = "ol";
-        private const string ElementLI = "li";
-
         private const string SeperatorSemicolonWithSpace = "; ";
 
         public List<string> Convert(Queue<HtmlNode> htmlNodes)
@@ -113,9 +105,9 @@ namespace DFC.HtmlToDataTranslator.Services
         private string TranslateLink(HtmlNode htmlNode)
         {
             var hrefValue = string.Empty;
-            if (htmlNode.Attributes.Contains(Href))
+            if (htmlNode.Attributes.Contains(HtmlAttributeName.Href))
             {
-                hrefValue = htmlNode.Attributes[Href].Value;
+                hrefValue = htmlNode.Attributes[HtmlAttributeName.Href].Value;
             }
 
             return $"[{ParseText(htmlNode)} | {hrefValue}]";
@@ -123,7 +115,7 @@ namespace DFC.HtmlToDataTranslator.Services
 
         private string TranslateList(HtmlNode htmlNode, string seperator)
         {
-            var listItems = htmlNode.Descendants(ElementLI);
+            var listItems = htmlNode.Descendants(TagName.Li);
             var listItemsTranslated = listItems.Select(x => Translate(x));
             var result = string.Join(seperator, listItemsTranslated);
             return result;
@@ -131,17 +123,17 @@ namespace DFC.HtmlToDataTranslator.Services
 
         private bool IsLink(HtmlNode htmlNode)
         {
-            return htmlNode.Name == ElementA;
+            return htmlNode.Name == TagName.A;
         }
 
         private bool IsList(HtmlNode htmlNode)
         {
-            return htmlNode.Name == ElementUL || htmlNode.Name == ElementOL;
+            return htmlNode.Name == TagName.UL || htmlNode.Name == TagName.OL;
         }
 
         private bool IsParagraph(HtmlNode htmlNode)
         {
-            return htmlNode.Name == ElementP;
+            return htmlNode.Name == TagName.P;
         }
 
         private bool IsNodeTypeText(HtmlNode htmlNode)

@@ -13,9 +13,12 @@ namespace DFC.HtmlToDataTranslator.Services
             if (!string.IsNullOrWhiteSpace(value))
             {
                 var nodeToStringListConvertor = new HtmlNodesToStringListConverter();
+                var rulesProcessor = new RulesProcessor();
+
+                var contentAfterRulesProcessor = rulesProcessor.Process(value);
 
                 var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(value);
+                htmlDoc.LoadHtml(contentAfterRulesProcessor);
 
                 var nodes = ParseNodes(htmlDoc);
                 result = nodeToStringListConvertor.Convert(nodes);
