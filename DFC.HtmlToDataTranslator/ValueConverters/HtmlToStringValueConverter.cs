@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using DFC.HtmlToDataTranslator.Contracts;
-using DFC.HtmlToDataTranslator.Services;
 using System.Collections.Generic;
 
 namespace DFC.HtmlToDataTranslator.ValueConverters
