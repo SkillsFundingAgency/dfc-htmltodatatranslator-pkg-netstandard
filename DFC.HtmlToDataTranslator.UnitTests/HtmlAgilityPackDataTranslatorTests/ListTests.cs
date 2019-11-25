@@ -25,15 +25,5 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             Assert.Single(outputValue);
             Assert.Equal("item1; item2; item3", outputValue.First());
         }
-
-        [Fact]
-        public void Demo1()
-        {
-            var translator = new HtmlAgilityPackDataTranslator();
-            var sourceValue = @"<li>item1</li><li>item2</li><li>item3</li>";
-            var outputValue = translator.Translate(sourceValue);
-            Assert.Single(outputValue);
-            Assert.Equal("item1; item2; item3", outputValue.First());
-        }
     }
 }
