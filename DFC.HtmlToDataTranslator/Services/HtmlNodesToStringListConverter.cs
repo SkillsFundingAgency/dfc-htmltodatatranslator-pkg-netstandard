@@ -149,21 +149,8 @@ namespace DFC.HtmlToDataTranslator.Services
                 result = htmlNode.InnerText;
                 if (!string.IsNullOrWhiteSpace(result))
                 {
-                    result = PerformReplace(result);
-
                     result = result.Trim();
                 }
-            }
-
-            return result;
-        }
-
-        private string PerformReplace(string sourceValue)
-        {
-            var result = sourceValue;
-            if (!string.IsNullOrWhiteSpace(sourceValue))
-            {
-                result = HtmlEntity.DeEntitize(sourceValue);
             }
 
             return result;

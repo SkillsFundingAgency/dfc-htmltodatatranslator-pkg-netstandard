@@ -22,6 +22,7 @@ namespace DFC.HtmlToDataTranslator.Services
         {
             var rules = new List<IPreProcessorRule>();
             rules.Add(new ReplaceBrTagsWithPTagsRule());
+            rules.Add(new DecodeHtmlRule());
             return rules;
         }
     }
