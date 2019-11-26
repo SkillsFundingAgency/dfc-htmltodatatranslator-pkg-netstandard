@@ -15,10 +15,10 @@ namespace DFC.HtmlToDataTranslator.Services
                 var nodeToStringListConvertor = new HtmlNodesToStringListConverter();
                 var rulesProcessor = new RulesProcessor();
 
-                var proProcessedContent = rulesProcessor.Process(value);
+                var preProcessedContent = rulesProcessor.Process(value);
 
                 var htmlDoc = new HtmlDocument();
-                htmlDoc.LoadHtml(proProcessedContent);
+                htmlDoc.LoadHtml(preProcessedContent);
 
                 var nodes = ParseNodes(htmlDoc);
                 result = nodeToStringListConvertor.Convert(nodes);
