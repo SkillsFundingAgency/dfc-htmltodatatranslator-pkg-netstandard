@@ -12,7 +12,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             var translator = new HtmlAgilityPackDataTranslator();
             var sourceValue = @"
 <ul>
-<li><a href=""http://www.commedia.org.uk/"">Community Media Association</a></li>
+<li><a href=""http://www.commedia.org.uk/"">Community Media Association </a></li>
 <li><a href=""http://www.hbauk.com/"">Hospital Broadcasting Association</a></li>
 <li><a href=""http://www.radiocentre.org/"">RadioCentre</a></li>
 </ul>";

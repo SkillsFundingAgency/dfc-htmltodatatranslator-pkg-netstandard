@@ -7,7 +7,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
     public class ParagraphTests
     {
         [Fact]
-        public void CanTranslateSingleParagraph()
+        public void CanTranslateParagraphs()
         {
             var translator = new HtmlAgilityPackDataTranslator();
             var sourceValue = @"<p>Your duties include</p>";

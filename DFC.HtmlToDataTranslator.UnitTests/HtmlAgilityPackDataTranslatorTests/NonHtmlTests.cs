@@ -6,6 +6,16 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
 {
     public class NonHtmlTests
     {
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        public void NullOrEmptyStringProducesEmptyArray(string sourceValue)
+        {
+            var translator = new HtmlAgilityPackDataTranslator();
+            var outputValue = translator.Translate(sourceValue);
+            Assert.Empty(outputValue);
+        }
+
         [Fact]
         public void NonHtmlContentIsReturnedAsIs()
         {
