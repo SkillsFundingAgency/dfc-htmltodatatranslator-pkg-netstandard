@@ -16,7 +16,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.Rules
         [InlineData("<p>some content<br /></p>", "<p>some content</p><p></p>")]
         [InlineData("<p id='p1'>some content<br></p>", "<p id='p1'>some content</p><p></p>")]
         [InlineData("<p id='p1'>some content<br><br/></p>", "<p id='p1'>some content</p><p></p><p></p>")]
-        public void ReplaceBrTagsWithPTags(string source, string expected)
+        public void CanApplyRule(string source, string expected)
         {
             var rule = new ReplaceBrTagsWithPTagsRule();
             var actual = rule.Process(source);

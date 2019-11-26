@@ -67,10 +67,6 @@ namespace DFC.HtmlToDataTranslator.Services
             {
                 result = TranslateList(htmlNode, SeperatorSemicolonWithSpace);
             }
-            else if (IsLink(htmlNode))
-            {
-                result = TranslateLink(htmlNode);
-            }
             else if (htmlNode.ChildNodes.Any())
             {
                 var childNodeTranslated = TranslateChildren(htmlNode);
@@ -100,17 +96,6 @@ namespace DFC.HtmlToDataTranslator.Services
             }
 
             return result;
-        }
-
-        private string TranslateLink(HtmlNode htmlNode)
-        {
-            var hrefValue = string.Empty;
-            if (htmlNode.Attributes.Contains(HtmlAttributeName.Href))
-            {
-                hrefValue = htmlNode.Attributes[HtmlAttributeName.Href].Value;
-            }
-
-            return $"[{ParseText(htmlNode)} | {hrefValue}]";
         }
 
         private string TranslateList(HtmlNode htmlNode, string seperator)
@@ -149,21 +134,8 @@ namespace DFC.HtmlToDataTranslator.Services
                 result = htmlNode.InnerText;
                 if (!string.IsNullOrWhiteSpace(result))
                 {
-                    result = PerformReplace(result);
-
                     result = result.Trim();
                 }
-            }
-
-            return result;
-        }
-
-        private string PerformReplace(string sourceValue)
-        {
-            var result = sourceValue;
-            if (!string.IsNullOrWhiteSpace(sourceValue))
-            {
-                result = HtmlEntity.DeEntitize(sourceValue);
             }
 
             return result;
