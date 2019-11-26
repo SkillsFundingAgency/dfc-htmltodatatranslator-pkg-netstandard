@@ -1,7 +1,4 @@
 ﻿using DFC.HtmlToDataTranslator.Rules;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace DFC.HtmlToDataTranslator.UnitTests.Rules
@@ -22,7 +19,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.Rules
         [InlineData("<p>content1&gt; content2</p>", "<p>content1> content2</p>")]
         [InlineData("<p>content1&le; content2</p>", "<p>content1≤ content2</p>")]
         [InlineData("<p>content1&ge; content2</p>", "<p>content1≥ content2</p>")]
-        public void ReplaceBrTagsWithPTags(string source, string expected)
+        public void CanApplyRule(string source, string expected)
         {
             var rule = new DecodeHtmlRule();
             var actual = rule.Process(source);

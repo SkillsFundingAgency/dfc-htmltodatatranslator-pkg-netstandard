@@ -48,7 +48,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             var outputValue = translator.Translate(sourceValue);
             Assert.Equal(3, outputValue.Count);
             Assert.Equal("p1", outputValue.ElementAt(0));
-            Assert.Equal("this is some[link1 | http://www.yahoo.com]content", outputValue.ElementAt(1));
+            Assert.Equal("this is some [link1 | http://www.yahoo.com]content", outputValue.ElementAt(1));
             Assert.Equal("p2", outputValue.ElementAt(2));
         }
 
@@ -56,10 +56,10 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
         public void CanTranslateTextWithLinks()
         {
             var translator = new HtmlAgilityPackDataTranslator();
-            var sourceValue = @"content non in html tags <a href='http://www.google.com'>link1</a> more content";
+            var sourceValue = @"content not in html tags <a href='http://www.google.com'>link1</a> more content";
             var outputValue = translator.Translate(sourceValue);
             Assert.Single(outputValue);
-            Assert.Equal("content non in html tags[link1 | http://www.google.com]more content", outputValue.ElementAt(0));
+            Assert.Equal("content not in html tags [link1 | http://www.google.com] more content", outputValue.ElementAt(0));
         }
     }
 }

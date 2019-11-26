@@ -15,8 +15,8 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
 <p>To get some work experience you could:</p>
 <ul>
 <li>volunteer to commentate on charity events like fun runs</li>
-<li>commentate for amateur matches at schools, college or for local teams</li>
-<li>record commentary for websites or internet radio stations</li>
+<li>commentate for amateur matches at schools, college or for local teams </li>
+<li> record commentary for websites or internet radio stations </li>
 <li>volunteer for community, hospital or student radio, or TV</li>
 </ul>
 <p>You can get a list of radio stations from:</p>
@@ -35,10 +35,10 @@ for work experience.</p>
             Assert.Equal("You'll need to have some practical experience and be able to show you have a real enthusiasm for sports commentating.", outputValue.ElementAt(0));
             Assert.Equal("To get some work experience you could:volunteer to commentate on charity events like fun runs; commentate for amateur matches at schools, college or for local teams; record commentary for websites or internet radio stations; volunteer for community, hospital or student radio, or TV", outputValue.ElementAt(1));
             Assert.Equal("You can get a list of radio stations from:[Community Media Association | http://www.commedia.org.uk/]; [Hospital Broadcasting Association | http://www.hbauk.com/]; [RadioCentre | http://www.radiocentre.org/]", outputValue.ElementAt(2));
-            Assert.Equal("Large broadcasters like[BBC Careers | https://www.bbc.co.uk/careers/work-experience/],[ITV | http://www.itvjobs.com/workinghere/entry-careers/]and[Channel 4 | https://careers.channel4.com/4talent]offer work experience placements, insight and talent days.", outputValue.ElementAt(3));
-            Assert.Equal("The[Sports Journalists ’ Association | https://www.sportsjournalists.co.uk/training/work-experience/]has more ideas about where to look \r\nfor work experience.", outputValue.ElementAt(4));
+            Assert.Equal("Large broadcasters like [BBC Careers | https://www.bbc.co.uk/careers/work-experience/], [ITV | http://www.itvjobs.com/workinghere/entry-careers/]   and [Channel 4 | https://careers.channel4.com/4talent] offer work experience placements, insight and talent days.", outputValue.ElementAt(3));
+            Assert.Equal("The [Sports Journalists ’ Association | https://www.sportsjournalists.co.uk/training/work-experience/] has more ideas about where to look \r\nfor work experience.", outputValue.ElementAt(4));
             Assert.Equal("With experience", outputValue.ElementAt(5));
-            Assert.Equal("You could move into other roles. Find more[information | http://ncs.com]here", outputValue.ElementAt(6));
+            Assert.Equal("You could move into other roles. Find more [information | http://ncs.com] here", outputValue.ElementAt(6));
         }
     }
 }

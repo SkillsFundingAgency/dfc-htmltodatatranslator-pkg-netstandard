@@ -10,6 +10,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
         [InlineData("content1<br/>content2")]
         [InlineData("content1<br/><p>content2</p>")]
         [InlineData("content1<br/><br/>content2")]
+        [InlineData("<p>content1<br/><br/>content2</p>")]
         public void CanTranslateLineBreaks(string sourceValue)
         {
             var translator = new HtmlAgilityPackDataTranslator();

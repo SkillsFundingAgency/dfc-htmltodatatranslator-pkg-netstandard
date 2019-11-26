@@ -13,6 +13,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
         [InlineData("<p>content </p>", "content")]
         [InlineData("<p> content</p>", "content")]
         [InlineData("<p> content </p>", "content")]
+        [InlineData(" <p> content </p> ", "content")]
         public void ContentWithSpacesIsTrimmed(string sourceValue, string expectedValue)
         {
             var translator = new HtmlAgilityPackDataTranslator();
