@@ -1,4 +1,4 @@
-﻿using DFC.HtmlToDataTranslator.Contracts;
+using DFC.HtmlToDataTranslator.Contracts;
 using HtmlAgilityPack;
 using System.Collections.Generic;
 
