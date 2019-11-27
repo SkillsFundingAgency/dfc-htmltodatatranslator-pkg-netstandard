@@ -35,5 +35,15 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             Assert.Single(outputValue);
             Assert.Equal("[The Dental Technologists Association | ]", outputValue.First());
         }
+
+        [Fact]
+        public void CanTranslateLinksWithText()
+        {
+            var translator = new HtmlAgilityPackDataTranslator();
+            var sourceValue = @"<a href='link1'></a>";
+            var outputValue = translator.Translate(sourceValue);
+            Assert.Single(outputValue);
+            Assert.Equal("[ | link1]", outputValue.First());
+        }
     }
 }
