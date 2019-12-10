@@ -13,7 +13,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             var sourceValue = @"<ul><li>item1</li><li>item2</li><li>item3</li></ul>";
             var outputValue = translator.Translate(sourceValue);
             Assert.Single(outputValue);
-            Assert.Equal("item1; item2; item3", outputValue.First());
+            Assert.Equal(" item1; item2; item3", outputValue.First());
         }
 
         [Fact]
@@ -23,7 +23,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
             var sourceValue = @"<ol><li>item1</li><li>item2</li><li>item3</li></ol>";
             var outputValue = translator.Translate(sourceValue);
             Assert.Single(outputValue);
-            Assert.Equal("item1; item2; item3", outputValue.First());
+            Assert.Equal(" item1; item2; item3", outputValue.First());
         }
     }
 }
