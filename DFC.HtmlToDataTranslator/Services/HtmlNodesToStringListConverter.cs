@@ -8,6 +8,7 @@ namespace DFC.HtmlToDataTranslator.Services
     public class HtmlNodesToStringListConverter
     {
         private const string SeperatorSemicolonWithSpace = "; ";
+        private const string Space = " ";
 
         public List<string> Convert(Queue<HtmlNode> htmlNodes)
         {
@@ -103,6 +104,11 @@ namespace DFC.HtmlToDataTranslator.Services
             var listItems = htmlNode.Descendants(TagName.Li);
             var listItemsTranslated = listItems.Select(x => Translate(x));
             var result = string.Join(seperator, listItemsTranslated);
+            if (!string.IsNullOrEmpty(result))
+            {
+                result = Space + result;
+            }
+
             return result;
         }
 

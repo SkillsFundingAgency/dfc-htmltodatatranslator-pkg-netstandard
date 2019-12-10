@@ -19,7 +19,7 @@ namespace DFC.HtmlToDataTranslator.UnitTests.HtmlAgilityPackDataTranslatorTests
 
             var outputValue = translator.Translate(sourceValue);
             Assert.Single(outputValue);
-            Assert.Equal("[Community Media Association | http://www.commedia.org.uk/]; [Hospital Broadcasting Association | http://www.hbauk.com/]; [RadioCentre | http://www.radiocentre.org/]", outputValue.First());
+            Assert.Equal(" [Community Media Association | http://www.commedia.org.uk/]; [Hospital Broadcasting Association | http://www.hbauk.com/]; [RadioCentre | http://www.radiocentre.org/]", outputValue.First());
         }
     }
 }
