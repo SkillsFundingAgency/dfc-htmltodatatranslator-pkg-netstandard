@@ -12,24 +12,21 @@ resources:
     ref: refs/tags/v1.6.5
     endpoint: 'GitHub (ESFA)'
 
+pool:
+  name: NCS - CI and CD
+  demands:
+  - msbuild
+  - visualstudio
+
 pr:
   - master
     
 jobs:
 - job: Build
   displayName: Build
-  pool:
-    name: NCS - CI and CD
-    demands:
-    - msbuild
-    - visualstudio
+  workspace:
+    clean: all
   
-  steps:
-  - task: DotNetCoreCLI@2  
-    inputs:
-      command: custom
-      custom: clean
-
   # Build Package + Unit Tests
   - template: AzureDevOpsTemplates/Build/dfc-dotnetcore-build.yml@dfc-devops
     parameters:
