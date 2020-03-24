@@ -27,6 +27,7 @@ jobs:
   workspace:
     clean: all
   
+  steps:
   # Build Package + Unit Tests
   - template: AzureDevOpsTemplates/Build/dfc-dotnetcore-build.yml@dfc-devops
     parameters:
